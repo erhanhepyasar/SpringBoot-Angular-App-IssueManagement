@@ -2,18 +2,25 @@ package com.app.service;
 
 import java.util.List;
 
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import com.app.entity.Project;
+import com.app.dto.ProjectDto;
+import com.app.util.TPage;
+
 
 public interface ProjectService {
-	
-	Project save(Project project);	
-	Project getById(Long id);	
-	List<Project> getByProjectCode(String projectCode);
-	List<Project> getByProjectCodeContains(String projectCode);
-	Page<Project> getAllPageable(Pageable pageable);
-	Boolean delete(Project project);
 
+    ProjectDto save(ProjectDto project);
+
+    ProjectDto getById(Long id);
+
+    ProjectDto getByProjectCode(String projectCode);
+
+    List<ProjectDto> getByProjectCodeContains(String projectCode);
+
+    TPage<ProjectDto> getAllPageable(Pageable pageable);
+
+    Boolean delete(ProjectDto project);
+
+    ProjectDto update(Long id, ProjectDto project);
 }

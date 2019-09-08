@@ -8,8 +8,14 @@ import com.app.util.TPage;
 public interface IssueService {
 	
 	IssueDto save(IssueDto issue);	
+	
+	
 	IssueDto getById(Long id);	
+	
 	TPage<IssueDto> getAllPageable(Pageable pageable);
-	Boolean delete(IssueDto issue);
+	
+	Boolean delete(Long issueId);
+	
+	IssueDto update(Long id, IssueDto issuDto);
 
 }
